@@ -211,7 +211,7 @@ npm run preview
 ```
 
 ### Deployed on Vercel
-Link: https://vercel.com/
+Link: [https://vercel.com/](https://medispeak-connect-3cox.vercel.app/)
 ---
 
 
