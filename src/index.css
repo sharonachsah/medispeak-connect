@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Healthcare-inspired palette - calming teals and blues */
+    --background: 200 20% 98%;
+    --foreground: 210 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 25% 15%;
+
+    /* Primary: Calming teal */
+    --primary: 189 94% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Soft blue-gray */
+    --secondary: 200 15% 94%;
+    --secondary-foreground: 210 25% 25%;
+
+    --muted: 200 15% 92%;
+    --muted-foreground: 210 10% 45%;
+
+    /* Accent: Warmer teal for interactive elements */
+    --accent: 174 72% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success: Medical green */
+    --success: 160 60% 40%;
+    --success-foreground: 0 0% 100%;
+
+    /* Provider color: Deep blue */
+    --provider: 210 70% 45%;
+    --provider-foreground: 0 0% 100%;
+    --provider-muted: 210 50% 95%;
+
+    /* Patient color: Warm teal */
+    --patient: 174 65% 42%;
+    --patient-foreground: 0 0% 100%;
+    --patient-muted: 174 45% 95%;
+
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 189 94% 43%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(189 94% 43%) 0%, hsl(174 72% 40%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(200 20% 98%) 0%, hsl(200 25% 95%) 100%);
+    --gradient-provider: linear-gradient(135deg, hsl(210 70% 45%) 0%, hsl(220 65% 50%) 100%);
+    --gradient-patient: linear-gradient(135deg, hsl(174 65% 42%) 0%, hsl(160 60% 40%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(200 20% 50% / 0.15);
+    --shadow-card: 0 2px 12px -2px hsl(200 20% 50% / 0.1);
+    --shadow-elevated: 0 12px 40px -8px hsl(200 20% 50% / 0.2);
+    --shadow-glow-primary: 0 0 30px hsl(189 94% 43% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 25% 8%;
+    --foreground: 200 15% 95%;
+
+    --card: 210 25% 12%;
+    --card-foreground: 200 15% 95%;
+
+    --popover: 210 25% 12%;
+    --popover-foreground: 200 15% 95%;
+
+    --primary: 189 85% 50%;
+    --primary-foreground: 210 25% 8%;
+
+    --secondary: 210 20% 18%;
+    --secondary-foreground: 200 15% 90%;
+
+    --muted: 210 20% 15%;
+    --muted-foreground: 200 10% 60%;
+
+    --accent: 174 70% 45%;
+    --accent-foreground: 210 25% 8%;
+
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 55% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --provider: 210 65% 55%;
+    --provider-foreground: 0 0% 100%;
+    --provider-muted: 210 30% 18%;
+
+    --patient: 174 60% 48%;
+    --patient-foreground: 0 0% 100%;
+    --patient-muted: 174 30% 18%;
+
+    --border: 210 20% 20%;
+    --input: 210 20% 20%;
+    --ring: 189 85% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(189 85% 50%) 0%, hsl(174 70% 45%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(210 25% 8%) 0%, hsl(210 25% 12%) 100%);
+    --gradient-provider: linear-gradient(135deg, hsl(210 65% 55%) 0%, hsl(220 60% 60%) 100%);
+    --gradient-patient: linear-gradient(135deg, hsl(174 60% 48%) 0%, hsl(160 55% 45%) 100%);
+
+    --shadow-soft: 0 4px 20px -4px hsl(210 25% 5% / 0.4);
+    --shadow-card: 0 2px 12px -2px hsl(210 25% 5% / 0.3);
+    --shadow-elevated: 0 12px 40px -8px hsl(210 25% 5% / 0.5);
+    --shadow-glow-primary: 0 0 30px hsl(189 85% 50% / 0.25);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-provider {
+    background: var(--gradient-provider);
+  }
+
+  .gradient-patient {
+    background: var(--gradient-patient);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-glow-primary {
+    box-shadow: var(--shadow-glow-primary);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Recording pulse animation */
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.95);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.15);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(0.95);
+      opacity: 1;
+    }
+  }
+
+  .animate-pulse-ring {
+    animation: pulse-ring 1.5s ease-in-out infinite;
+  }
+
+  /* Fade in animation */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out forwards;
+  }
+
+  /* Slide up animation */
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out forwards;
+  }
+
+  /* Wave animation for audio */
+  @keyframes wave {
+    0%, 100% {
+      transform: scaleY(0.5);
+    }
+    50% {
+      transform: scaleY(1);
+    }
+  }
+
+  .animate-wave {
+    animation: wave 0.8s ease-in-out infinite;
+  }
+}
